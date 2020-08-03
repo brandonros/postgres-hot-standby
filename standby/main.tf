@@ -23,6 +23,11 @@ resource "docker_container" "autossh" {
   restart = "always"
   command = ["./autossh.sh"]
 
+  env = [
+    "MASTER_USER=brandon",
+    "MASTER_HOST=161.35.106.51"
+  ]
+
   volumes {
     host_path = abspath("./autossh.sh")
     container_path = "/autossh.sh"
@@ -63,7 +68,7 @@ resource "docker_container" "postgres-standby" {
   ]
 
   volumes {
-    host_path = abspath("../postgres-standby")
+    host_path = abspath("./pgdata")
     container_path = "/var/lib/postgresql/data"
   }
 

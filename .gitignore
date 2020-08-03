@@ -1,6 +1,7 @@
 .DS_Store
 standby/id_rsa
 standby/id_rsa.pub
+pgdata/
 postgres-standby/
 terraform.tfstate
 terraform.tfstate.backup

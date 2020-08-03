@@ -27,7 +27,7 @@ resource "docker_container" "postgres-master" {
   ]
 
   volumes {
-    host_path = abspath("../postgres-master")
+    host_path = abspath("./pgdata")
     container_path = "/var/lib/postgresql/data"
   }
 

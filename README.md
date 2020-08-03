@@ -1,5 +1,5 @@
 # postgres-hot-standby
-Terraform + Docker + Postgres + stunnel + streaming replication + hot standby
+Terraform + Docker + Postgres + autossh port forwarding + streaming replication + hot standby
 
 ## Master
 
@@ -19,6 +19,9 @@ psql -c "select pg_reload_conf()"
 ```
 
 ## Slave
+
+1. Update `MASTER_USER` and `MASTER_HOST` in `slave/main.tf`
+1. Expects `slave/id_rsa` and `slave/id_rsa.pub`
 
 ```sh
 # apply terraform plan
